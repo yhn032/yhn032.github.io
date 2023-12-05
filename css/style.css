@@ -2,8 +2,10 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
+/* header start */
 .header {
     height: 100px;
     line-height: 100px;
@@ -14,7 +16,9 @@ body {
     text-align: center;
     transition: background-color 0.5s ease;
 }
+/* header end */
 
+/* sidebar start */
 .sidebar {
     position: fixed;
     left: 0px; /* initially hide the sidebar */
@@ -25,8 +29,8 @@ body {
     color: #fff;
     transition: left 0.3s ease;
     overflow-y: scroll;
-/*    -ms-overflow-style: none; !* IE 및 Edge에서 스크롤바 숨기기 *!
-    scrollbar-width: none; !* Firefox에 스크롤바 숨기기 *!*/
+    -ms-overflow-style: none; /* IE 및 Edge에서 스크롤바 숨기기 */
+    scrollbar-width: none; /* Firefox에 스크롤바 숨기기 */
 }
 
 /* WebKit 브라우저에만 적용되는 스타일 */
@@ -48,6 +52,13 @@ body {
     text-decoration: none;
 }
 
+/* sidebar end */
+
+/* content start */
+.content {
+    height: auto;
+}
+
 .content .content-toggle-btn {
     position: absolute;
     bottom: 50%; /* Adjust the button position as needed */
@@ -61,6 +72,7 @@ body {
     border-bottom-right-radius: 5px;
     cursor: pointer;
     transition: left 0.3s ease;
+    /*transition: bottom 0.1s ease; !* 스크롤로 위아래 이동시 부드럽게 따라오게 하기 위함이다. 였었는데,,, 중복적용이 불가능함  *!*/
 }
 
 .content, .header {
@@ -68,3 +80,39 @@ body {
     padding: 20px;
     transition: margin-left 0.3s ease;
 }
+/* content end */
+
+/* scrollBar end */
+/* 스크롤 바 디자인 */
+::-webkit-scrollbar {
+    width: 10px; /* 스크롤바 너비 */
+    height: 200px;
+}
+
+/* 스크롤 바 트랙 */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* 스크롤바 트랙 배경색 */
+}
+
+/* 스크롤 바 색상 */
+::-webkit-scrollbar-thumb {
+    background: #888; /* 스크롤바 색상 */
+    border-radius: 5px; /* 스크롤바 모서리 반지름 */
+}
+
+/* 영역에 마우스 호버시 스크롤 바 색상 변경 */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* 호버시 스크롤바 색상 변경 */
+}
+/* scrollBar end */
+
+/* footer start */
+.footer {
+    width: 100%;
+    background-color: navajowhite;
+    height: 100px;
+    padding-left: 270px;
+}
+/* footer end */
+
+

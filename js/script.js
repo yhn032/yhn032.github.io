@@ -32,3 +32,25 @@ function toggleSidebar() {
         contentToggleBtn.style.left = '11px';
     }
 }
+
+let lastScrollTop = 0;
+window.addEventListener('scroll', function(event){
+    const contentToggleBtn = document.querySelector('.content-toggle-btn');
+    const computedStyle = window.getComputedStyle(contentToggleBtn);
+
+    const lastValue = computedStyle.getPropertyValue('bottom').replace('px', '');
+
+    let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScrollTop > lastScrollTop) {
+        contentToggleBtn.style.bottom = parseInt(lastValue)-(currentScrollTop-lastScrollTop)+'px';
+        console.log(currentScrollTop-lastScrollTop);
+        /*contentToggleBtn.style.bottom =*/
+    } else {
+        contentToggleBtn.style.bottom = parseInt(lastValue)+(lastScrollTop-currentScrollTop)+'px';
+        console.log(lastScrollTop-currentScrollTop);
+    }
+
+    lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+
+});
