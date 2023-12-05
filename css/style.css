@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    height: 100px;
+    line-height: 100px;
+    font-size: 30px;
+    font-weight: 500;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    transition: background-color 0.5s ease;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0px; /* initially hide the sidebar */
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    transition: left 0.3s ease;
+    overflow-y: scroll;
+/*    -ms-overflow-style: none; !* IE 및 Edge에서 스크롤바 숨기기 *!
+    scrollbar-width: none; !* Firefox에 스크롤바 숨기기 *!*/
+}
+
+/* WebKit 브라우저에만 적용되는 스타일 */
+.sidebar::-webkit-scrollbar {
+    display: none; /* WebKit 브라우저에서 스크롤바 숨기기 */
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 10px;
+}
+
+.sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.content .content-toggle-btn {
+    position: absolute;
+    bottom: 50%; /* Adjust the button position as needed */
+    left: 261px;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    border: none;
+    height: 40px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    transition: left 0.3s ease;
+}
+
+.content, .header {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
